@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=test_1
+comment1.params=a\ size
+comment1.target=void\ procedure(int[],\ int)
+comment2.params=
+comment2.target=void\ get_data()
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4

@@ -1,0 +1,11 @@
+use amazon_;
+insert into product values(001,'HARD DISK',2000);
+insert into product values(002,'RAM',3000);
+insert into product values(003,'WEBCAM',500);
+insert into product values(004,'GPU',13000);
+insert into product values(005,'HEADPHONES',1500);
+insert into product values(006,'MOUSE',2500);
+insert into product values(007,'KEYBOARD',4000);
+insert into product values(008,'MONITOR',8000);
+insert into product values(009,'CPU CABINATE',6000);
+insert into product values(010,'PSU',4500);

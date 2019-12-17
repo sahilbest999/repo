@@ -1,0 +1,11 @@
+use amazon_;
+insert into customer values(101,'SAHIL','SHAHANE',989065809,'sahil@gmail.com','PUNE');
+insert into customer values(102,'UTTKARSH','PATEL',808799660,'uttk@gmail.com','SWARGATE');
+insert into customer values(103,'PRATHMESH','SATPUTE',883002993,'polo@gmail.com','HADAPSAR');
+insert into customer values(104,'SHWET','PATHAK',820840838,'shwet@gmail.com','KOTHRUD');
+insert into customer values(105,'MUIZZ','SHIEK',960444608,'muizz@gmail.com','BANER');
+insert into customer values(106,'JAYASHRI','GHORPADE',966573256,'jayas@gmail.com','UNKNOWN');
+insert into customer values(107,'SHRUTI','SHAHANE',932582776,'shruti@gmail.com','PUNE');
+insert into customer values(108,'VANSHAJ','NATHANI',842121390,'vans@gmail.com','PUNE');
+insert into customer values(109,'ANUSHKA','SHETTY',777600508,'anu@gmail.com','BAVDHAN');
+insert into customer values(110,'PRATHMESH','LONKAR',907551875,'lonkar@gmail.com','CHINCHWAD');
