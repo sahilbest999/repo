@@ -46,6 +46,7 @@ public class Main{
 			break;
 		case 3:
 			get_data();
+				total = 1;
 			for(i=0;i<size;i++)
 			{
 				total *= Integer.parseInt(data[i]);
