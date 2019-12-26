@@ -56,7 +56,7 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 	
 	Main2()
 	{
-		main_frame = new JFrame("Simple Calculator");
+		main_frame = new JFrame("JavaGUI Example");
 		//main_frame.setBounds(40,0,1280,720);
 		main_frame.setBounds(40,0,600,500);
 		main_frame.setLayout(null);
@@ -303,7 +303,7 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 			try
 			{
 				ans.setText(Double.toString((double)Long.parseLong(s1) / (double)Long.parseLong(s2)));
-				operator.setText("÷");
+				operator.setText("Ã·");
 			}
 			catch(Exception e)
 			{
