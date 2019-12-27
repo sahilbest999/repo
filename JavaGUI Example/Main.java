@@ -1,8 +1,11 @@
+package asd;
+
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,MouseMotionListener
+
+class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,MouseMotionListener,WindowListener,FocusListener
 {
 	String []state_arr = {
 			"Andhra Pradesh",
@@ -43,7 +46,7 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 	Color matt_black = new Color(23,23,23),matt_blue = new Color(00,255,255);
 	JTextField t1,t2,t3,t_name;
 	JTextArea t_a1;
-	JLabel operator,equal,ans,name,gender,state,Item_example,Item_example2,l_menu_logo;
+	JLabel operator,equal,ans,name,gender,state,Item_example,Item_example2,l_menu_logo,window_focus;
 	Number sum;
 	Cursor cur_hand;
 	Image title_icon;
@@ -63,10 +66,11 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 		main_frame.setVisible(true);
 		main_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		main_frame.setResizable(false);
-		title_icon = Toolkit.getDefaultToolkit().getImage("calculatorMedium.png");
-		menu_logo = new ImageIcon("C:\\Users\\Administrator\\eclipse-workspace\\JavaGUI\\src\\circle_small.png");
+		title_icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\poly.lab\\Downloads\\repo-master\\repo-master\\JavaGUI Example\\calculatorMedium.png");
+		menu_logo = new ImageIcon("C:\\Users\\poly.lab\\Downloads\\repo-master\\repo-master\\JavaGUI Example\\circle_small.png");
 		main_frame.setIconImage(title_icon); //FOR PROGRAM's ICON
 		main_frame.addKeyListener(this);
+		main_frame.addWindowListener(this);
 		//main_frame.setContentPane(new JLabel(new ImageIcon("C:\\Users\\Administrator\\Desktop\\img2.jpg"))); //USE THIS TO SET BACKGROUND IMAGE
 		c = main_frame.getContentPane();
 		
@@ -259,6 +263,11 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 		l_menu_logo = new JLabel(menu_logo);
 		l_menu_logo.setBounds(470,10,menu_logo.getIconWidth(),menu_logo.getIconHeight());
 		
+		window_focus = new JLabel("Focussing on this Window/Frame");
+		window_focus.setBounds(30,413,200-10,30);
+		window_focus.setForeground(Color.GREEN);
+		window_focus.setFont(new Font("Trebuchet MS",Font.PLAIN,12));
+		
 		c.add(operator);
 		c.add(equal);
 		c.add(ans);
@@ -268,6 +277,7 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 		c.add(Item_example);
 		c.add(Item_example2);
 		c.add(l_menu_logo);
+		c.add(window_focus);
 	}
 	public void cursors()
 	{
@@ -303,7 +313,7 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 			try
 			{
 				ans.setText(Double.toString((double)Long.parseLong(s1) / (double)Long.parseLong(s2)));
-				operator.setText("Ã·");
+				operator.setText("÷");
 			}
 			catch(Exception e)
 			{
@@ -519,7 +529,6 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 			dragme.setText("Drag Me!");
 		}
 	}
-	
 	public void mouseMoved(MouseEvent m)
 	{
 		
@@ -532,6 +541,53 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 			dragme.setLocation(m.getX(),m.getY());
 		}
 	}
+	
+	public void windowActivated(WindowEvent w)
+	{
+		if(w.getSource()==main_frame)
+		{
+			window_focus.setText("Focussing on this Window/Frame");
+			window_focus.setForeground(Color.GREEN);
+		}
+	}
+	public void windowDeactivated(WindowEvent w)
+	{
+		if(w.getSource()==main_frame)
+		{
+			window_focus.setText("Not Focussing on this Window/Frame");
+			window_focus.setForeground(Color.RED);
+		}
+	}
+	public void windowIconified(WindowEvent w)
+	{
+		
+	}
+	public void windowDeiconified(WindowEvent w)
+	{
+		
+	}
+	public void windowOpened(WindowEvent w)
+	{
+		
+	}
+	public void windowClosing(WindowEvent w)
+	{
+		
+	}
+	public void windowClosed(WindowEvent w)
+	{
+		
+	}
+	
+	public void focusGained(FocusEvent f)
+	{
+		
+	}
+	public void focusLost(FocusEvent f)
+	{
+		
+	}
+
 }
 
 
