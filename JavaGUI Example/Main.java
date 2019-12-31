@@ -1,6 +1,3 @@
-package asd;
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -59,6 +56,7 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 	
 	Main2()
 	{
+            try{
 		main_frame = new JFrame("JavaGUI Example");
 		//main_frame.setBounds(40,0,1280,720);
 		main_frame.setBounds(40,0,600,500);
@@ -82,8 +80,12 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 		labels();
 		
 		c.setBackground(matt_black);
-		c.revalidate();
 		System.gc();
+            }
+            catch(Exception e)
+            {
+              System.err.println(e);  
+            }
 	}
 	public void buttons()
 	{
@@ -313,7 +315,7 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 			try
 			{
 				ans.setText(Double.toString((double)Long.parseLong(s1) / (double)Long.parseLong(s2)));
-				operator.setText("÷");
+				operator.setText("Ã·");
 			}
 			catch(Exception e)
 			{
@@ -492,6 +494,7 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 			dragme.setBackground(Color.WHITE);
 			dragme.setForeground(Color.BLACK);
 			dragme.setText("Dragging...");
+                        dragme_dragging = 1;
 		}
 		
 	}
@@ -512,6 +515,7 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 			dragme.setBackground(matt_black);
 			dragme.setForeground(Color.WHITE);
 			dragme.setText("Drag Me!");
+                         dragme_dragging = 0;
 		}
 	}
 	public void mouseExited(MouseEvent m)
@@ -538,7 +542,7 @@ class Main2 implements ActionListener,ItemListener,KeyListener,MouseListener,Mou
 		if(m.getSource()==dragme)
 		{
 			dragme_dragging = 1;
-			dragme.setLocation(m.getX(),m.getY());
+			dragme.setLocation(m.getXOnScreen()-87,m.getYOnScreen()-49);
 		}
 	}
 	
